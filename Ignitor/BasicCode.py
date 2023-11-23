@@ -30,6 +30,7 @@ if button_press:
        if(button_press == False):
            print("Botão cancelar pressionado, relé desligado.")
            GPIO.output(relay, GPIO.HIGH)
+           GPIO.output(buzzer, GPIO.LOW)
            break
 
     GPIO.output(buzzer, GPIO.LOW)
