@@ -52,7 +52,7 @@ while button_press and not exit_loops:
     print("\nRelé e led acionados.")
     time.sleep(5)
 
- # Limpeza dos pinos
- GPIO.cleanup() 
+# Limpeza dos pinos
+GPIO.cleanup() 
 
 
