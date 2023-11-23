@@ -42,8 +42,7 @@ while button_press and not exit_loops:
           exit_loops = True
           break
       
-      # Estado do botão
-      button_press = False
+      #button_press = False
   
   if button_press == True:
     # Liga o led e desliga o relé
@@ -53,7 +52,7 @@ while button_press and not exit_loops:
     print("\nRelé e led acionados.")
     time.sleep(5)
 
-# Limpeza dos pinos
-GPIO.cleanup() 
+ # Limpeza dos pinos
+ GPIO.cleanup() 
 
 
