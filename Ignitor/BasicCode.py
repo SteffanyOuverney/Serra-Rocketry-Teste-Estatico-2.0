@@ -31,7 +31,6 @@ if button_press:
       time.sleep(0.2)
       # Desliga o buzzer
       GPIO.output(buzzer, GPIO.LOW)
-      print("Beep")
       time.sleep(0.8)
 
       # Opção para cancelar a ignição
