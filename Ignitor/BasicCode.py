@@ -20,9 +20,10 @@ GPIO.output(relay, GPIO.HIGH)
 
 # Estado do botão
 button_press = True 
+exit_loops = False
 
 # Se o botão estiver pressionado
-if button_press:
+while button_press and not exit_loops:
   # Contagem regressiva
   for contagem_regre in range(10, 0, -1):
       # Liga o buzzer
@@ -34,18 +35,25 @@ if button_press:
       time.sleep(0.8)
 
       # Opção para cancelar a ignição
-      if(button_press == False):
+      if button_press == False:
           print("Botão cancelar pressionado, relé desligado.")
           GPIO.output(relay, GPIO.HIGH)
           GPIO.output(buzzer, GPIO.LOW)
+          exit_loops = True
           break
-
-  # Liga o led e desliga o relé
-  GPIO.output(buzzer, GPIO.LOW)
-  GPIO.output(led, GPIO.HIGH)
-  GPIO.output(relay, GPIO.LOW)
-  print("\nRelé e led acionados.")
-  time.sleep(5)
+      
+      # Estado do botão
+      button_press = False
+  
+  if button_press == True:
+    # Liga o led e desliga o relé
+    GPIO.output(buzzer, GPIO.LOW)
+    GPIO.output(led, GPIO.HIGH)
+    GPIO.output(relay, GPIO.LOW)
+    print("\nRelé e led acionados.")
+    time.sleep(5)
 
 # Limpeza dos pinos
 GPIO.cleanup() 
+
+
