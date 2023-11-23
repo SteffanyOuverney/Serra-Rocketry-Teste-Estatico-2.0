@@ -51,6 +51,8 @@ while button_press and not exit_loops:
     GPIO.output(relay, GPIO.LOW)
     print("\nRelé e led acionados.")
     time.sleep(5)
+  
+  break;
 
 # Limpeza dos pinos
 GPIO.cleanup() 
